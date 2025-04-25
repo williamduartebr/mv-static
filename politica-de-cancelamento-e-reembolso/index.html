@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica De Cancelamento E Reembolso - Mercado Veículos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-title {
+            color: #333333;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-[#0A2868] text-white py-4">
+        <div class="container mx-auto px-4 flex items-center">
+            <a href="https://mercadoveiculos.com" class="flex items-center">
+                <img src="https://mercadoveiculos.s3.amazonaws.com/statics/logos/logo-mercadoveiculos-write.svg" alt="Mercado Veículos" class="h-10">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:my-10 max-w-3xl">
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-title">Política de Cancelamento e Reembolso</h1>
+            <p class="text-sm text-gray-600 mb-6">Última atualização: 30 de janeiro de 2025</p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">1. Introdução</h2>
+            <p class="mb-4">Esta política de cancelamento e reembolso visa esclarecer os direitos e procedimentos relacionados à
+                aquisição e cancelamento dos serviços oferecidos pelo MercadoVeículos. Nosso objetivo é garantir a satisfação
+                dos nossos clientes e a transparência em todas as transações.</p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">2. Planos e Assinaturas</h2>
+            <p class="mb-4">Oferecemos diversos planos para atender às necessidades dos profissionais e empresas do setor
+                automotivo:</p>
+                <ul class="list-disc pl-8 mb-4">
+                    <li>
+                        Plano Grátis: 
+                        @if($freePlan = $this->getFreePlanDetails())
+                            Sem custo, com recursos básicos.
+                        @endif
+                    </li>
+                    <li>
+                        Plano PRO Mensal: 
+                        @if($proMonthly = $this->getProMonthlyPlanDetails())
+                            R$ {{ number_format($proMonthly['price'], 2, ',', '.') }} por mês, 
+                            com recursos avançados e renovação automática.
+                        @endif
+                    </li>
+                    <li>
+                        Plano PRO Anual: 
+                        @if($proYearly = $this->getProYearlyPlanDetails())
+                            R$ {{ number_format($proYearly['price'], 2, ',', '.') }} por ano 
+                            (economia de R$ {{ number_format(($this->getProMonthlyPlanDetails()['price'] * 12) - $proYearly['price'], 2, ',', '.') }}), 
+                            com recursos avançados e renovação automática.
+                        @endif
+                    </li>
+                    <li>
+                        Plano Vitalício: 
+                        @if($lifetimePlan = $this->getLifetimePlanDetails())
+                            Pagamento único de R$ {{ number_format($lifetimePlan['prices'][0]['price'], 2, ',', '.') }}, 
+                            com recursos premium e acesso perpétuo.
+                        @endif
+                    </li>
+                </ul>
+            <p class="mb-4">Para detalhes específicos sobre cada plano, visite nossa <a href="{{ route('plans') }}"
+                    class="text-base" title="página de planos" target="_blank" rel="noopener noreferrer">página de planos.</a>
+            </p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">3. Garantia de Satisfação e Direito de Arrependimento</h2>
+            <h3 class="text-xl font-medium mt-4 mb-2">3.1 Garantia de 30 Dias para Pagamentos via PIX e Boleto</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Durante os primeiros 30 dias após a contratação, você pode solicitar o cancelamento e receber um reembolso
+                    total, sem questionamentos.</li>
+                <li>Esta garantia se aplica a todos os tipos de planos pagos via PIX ou boleto.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">3.2 Direito de Arrependimento (7 Dias)</h3>
+            <p class="mb-4">De acordo com o Código de Defesa do Consumidor (Art. 49, Lei nº 8.078/90):</p>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Cancelamentos solicitados dentro de 7 dias da contratação resultarão em reembolso total, sem
+                    questionamentos.</li>
+                <li>Este direito legal se aplica a todas as formas de pagamento, incluindo cartão de crédito.</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">4. Cancelamento de Planos</h2>
+            <h3 class="text-xl font-medium mt-4 mb-2">4.1 Planos Mensais</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Os usuários podem cancelar seus planos mensais a qualquer momento.</li>
+                <li>O cancelamento será efetivo no final do período de faturamento atual.</li>
+                <li>Não haverá reembolso parcial para o mês em curso.</li>
+                <li>O acesso aos serviços permanecerá ativo até o final do período pago.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">4.2 Planos Anuais</h3>
+            <h4 class="text-lg font-medium mt-2 mb-1">4.2.1 Planos Anuais com Pagamento Único (PIX ou Boleto)</h4>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Reembolso total disponível apenas dentro do período de garantia de 30 dias.</li>
+                <li>Após 30 dias, não há reembolso para cancelamentos de planos anuais pagos em uma única vez.</li>
+            </ul>
+        
+            <h4 class="text-lg font-medium mt-2 mb-1">4.2.2 Planos Anuais com Pagamento Mensal (Cartão de Crédito)</h4>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Podem ser cancelados a qualquer momento.</li>
+                <li>O cancelamento será efetivo ao final do período mensal atual.</li>
+                <li>Não haverá cobrança de parcelas futuras após o cancelamento.</li>
+                <li>Não há reembolso para pagamentos já processados.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">4.3 Planos Vitalícios</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Reembolso total disponível apenas dentro do período de garantia (30 dias para PIX/boleto, 7 dias para cartão
+                    de crédito).</li>
+                <li>Após o período de garantia, estas compras são consideradas finais e não são elegíveis para reembolso.</li>
+                <li>O acesso aos recursos do plano vitalício permanece ativo indefinidamente após a compra.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">4.4 Itens Adicionais (Logotipo na Página, Tags de Serviços)</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Itens adicionais seguem a mesma política de cancelamento e reembolso do plano principal ao qual estão
+                    vinculados.</li>
+                <li>Em caso de cancelamento do plano principal, os itens adicionais serão automaticamente cancelados.</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">5. Processo de Cancelamento</h2>
+            <ol class="list-decimal pl-8 mb-4">
+                <li>Acesse sua conta no MercadoVeículos.</li>
+                <li>Navegue até a seção "Pagamentos e Assinatura".</li>
+                <li>Clique em "Cobrança e Faturas".</li>
+                <li>Na aba "Planos", clique em "Cancelar Plano".</li>
+                <li>Uma modal será aberta com as seguintes informações:
+                    <ul class="list-disc pl-8 mt-2">
+                        <li>Cancelamento de Plano</li>
+                        <li>Resumo do Plano Atual: Detalhes do seu plano, incluindo nome, valor, data de início e término
+                            previsto.</li>
+                        <li>Informações de Cancelamento: Data atual, dias desde a contratação, dias restantes e valor
+                            proporcional.</li>
+                        <li>Situação do Reembolso: Informação sobre o valor do reembolso, se aplicável.</li>
+                        <li>Aviso sobre o período de reembolso total para pagamentos com cartão de crédito.</li>
+                        <li>Checkbox para confirmar o entendimento e concordância com a Política de Cancelamento e Reembolso.
+                        </li>
+                    </ul>
+                </li>
+                <li>Leia atentamente todas as informações apresentadas.</li>
+                <li>Se concordar, marque a caixa "Eu entendo e concordo com a Política de Cancelamento e Reembolso".</li>
+                <li>Clique em "Confirmar Cancelamento".</li>
+                <li>Se elegível para reembolso, você será direcionado para fornecer as informações necessárias.</li>
+            </ol>
+            <p class="mb-4">O cancelamento será processado em até 3 dias úteis após a confirmação. Você receberá um e-mail de
+                confirmação assim que o cancelamento for concluído.</p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">6. Reembolsos</h2>
+            <p class="mb-4">Os reembolsos, quando aplicáveis, serão processados em até 10 dias úteis após a aprovação da
+                solicitação de cancelamento.</p>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.1 Elegibilidade para Reembolso</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Planos mensais e anuais:
+                    <ul class="list-disc pl-8 mt-2">
+                        <li>Reembolso total disponível nos primeiros 7 dias após a contratação para todas as formas de
+                            pagamento.</li>
+                        <li>Para pagamentos via cartão de crédito, reembolso parcial disponível entre o 8º e o 30º dia após a
+                            contratação.</li>
+                    </ul>
+                </li>
+                <li>Planos vitalícios:
+                    <ul class="list-disc pl-8 mt-2">
+                        <li>Reembolso total disponível nos primeiros 30 dias após a contratação para pagamentos via PIX ou
+                            boleto.</li>
+                        <li>Reembolso total disponível nos primeiros 7 dias após a contratação para pagamentos via cartão de
+                            crédito.</li>
+                        <li>Após esses períodos, reembolsos serão avaliados caso a caso, podendo ser parciais ou não aplicáveis.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.2 Cálculo de Reembolsos</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Reembolso total: O valor integral pago será devolvido, sem deduções.</li>
+                <li>Reembolso parcial (aplicável apenas para pagamentos via cartão de crédito entre o 8º e o 30º dia):
+                    <ul class="list-disc pl-8 mt-2">
+                        <li>O valor do reembolso será calculado proporcionalmente ao tempo restante do plano.</li>
+                        <li>Uma taxa administrativa de 10% será deduzida do valor proporcional calculado.</li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.3 Métodos de Reembolso</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Cartão de crédito: O estorno será realizado diretamente no cartão utilizado na compra.</li>
+                <li>PIX ou Boleto: O usuário poderá optar por:
+                    <ul class="list-disc pl-8 mt-2">
+                        <li>Transferência bancária para conta de sua titularidade.</li>
+                        <li>Transferência via PIX para chave de sua escolha.</li>
+                    </ul>
+                </li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.4 Informações Necessárias para Reembolso (exceto cartão de crédito)</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Nome do banco</li>
+                <li>Tipo de conta (corrente ou poupança)</li>
+                <li>Número da agência e conta</li>
+                <li>CPF/CNPJ do titular (deve ser o mesmo da compra original)</li>
+                <li>Se optar por PIX: tipo de chave e chave PIX</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.5 Observações Importantes</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>A conta bancária ou chave PIX para reembolso deve estar no nome do titular que realizou a compra original.
+                </li>
+                <li>O CPF/CNPJ do titular da conta para reembolso deve ser o mesmo utilizado na compra original.</li>
+                <li>Não é obrigatório que a chave PIX para reembolso seja a mesma utilizada no pagamento original.</li>
+                <li>Em caso de qualquer discrepância nas informações fornecidas, nossa equipe de suporte entrará em contato para
+                    verificação adicional.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.6 Prazo para Solicitação de Reembolso</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Para garantir o direito ao reembolso total ou parcial, a solicitação de cancelamento deve ser feita dentro
+                    dos prazos estipulados na seção 6.1.</li>
+                <li>Solicitações feitas após os prazos estabelecidos serão analisadas individualmente, sem garantia de
+                    reembolso.</li>
+            </ul>
+        
+            <h3 class="text-xl font-medium mt-4 mb-2">6.7 Exclusões de Reembolso</h3>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Serviços já utilizados ou consumidos não são elegíveis para reembolso.</li>
+                <li>Cancelamentos de planos anuais pagos em uma única vez via PIX ou boleto não são elegíveis para reembolso
+                    após o período de 30 dias.</li>
+                <li>Planos vitalícios não são elegíveis para reembolso após o período de garantia (30 dias para PIX/boleto, 7
+                    dias para cartão de crédito).</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">7. Renovação Automática</h2>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Planos mensais e anuais com pagamento recorrente são renovados automaticamente.</li>
+                <li>A renovação automática pode ser desativada nas configurações da conta.</li>
+                <li>Para pagamentos via PIX ou boleto, instruções de renovação serão enviadas antes do vencimento.</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">8. Processamento de Pagamentos</h2>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Os pagamentos são processados pelo MercadoPago em nome do MercadoVeículos.</li>
+                <li>Em caso de problemas com pagamentos ou reembolsos, entre em contato com nosso suporte ao cliente.</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">9. Uso de Informações Pessoais</h2>
+            <ul class="list-disc pl-8 mb-4">
+                <li>As informações pessoais coletadas durante o processo de compra são utilizadas para processamento de
+                    pagamentos, identificação do usuário e comunicações relacionadas à conta.</li>
+                <li>Em caso de cancelamento ou reembolso, essas informações serão usadas para verificar a identidade do
+                    solicitante e processar o reembolso.</li>
+            </ul>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">10. Casos Especiais</h2>
+            <p class="mb-4">Em situações excepcionais (problemas técnicos prolongados, falhas significativas no serviço), a
+                empresa poderá oferecer compensações adicionais, analisadas caso a caso.</p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">11. Notificações</h2>
+            <p class="mb-4">Enviaremos notificações por e-mail sobre renovações, pagamentos pendentes e alterações na conta.</p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">12. Alterações na Política</h2>
+            <ul class="list-disc pl-8 mb-4">
+                <li>Reservamo-nos o direito de modificar esta política a qualquer momento.</li>
+                <li>As alterações entrarão em vigor após a publicação na plataforma.</li>
+                <li>Recomendamos que os usuários revisem periodicamente esta política.</li>
+            </ul>
+        
+            <p class="mt-8 text-sm text-gray-600">Para dúvidas ou esclarecimentos sobre esta política, entre em contato com
+                nosso suporte ao cliente: <a href="mailto:suporte@mercadoveiculos.com"
+                    class="text-base text-blue-600 hover:underline">suporte@mercadoveiculos.com</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#030D23] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Mercado Veículos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/sobre-nos" class="hover:text-gray-300">Sobre nós</a></li>
+                        <li><a href="https://mercadoveiculos.com/fale-conosco" class="hover:text-gray-300">Fale conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Transparência</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/politica-de-privacidade" class="hover:text-gray-300">Política de Privacidade</a></li>
+                        <li><a href="https://mercadoveiculos.com/termos-de-uso" class="hover:text-gray-300">Termos de Uso</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cookies" class="hover:text-gray-300">Política de Cookies</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cancelamento-e-reembolso" class="hover:text-gray-300">Política de Cancelamento e Reembolso</a></li>
+                        <li><a href="https://mercadoveiculos.com/anuncios-baseados-em-interesses" class="hover:text-gray-300">Anúncios Baseados em Interesses</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm">
+                <p>&copy; 2025 Mercado Veículos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

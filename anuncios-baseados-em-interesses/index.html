@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anuncios Baseados Em Interesses - Mercado Veículos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-title {
+            color: #333333;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-[#0A2868] text-white py-4">
+        <div class="container mx-auto px-4 flex items-center">
+            <a href="https://mercadoveiculos.com" class="flex items-center">
+                <img src="https://mercadoveiculos.s3.amazonaws.com/statics/logos/logo-mercadoveiculos-write.svg" alt="Mercado Veículos" class="h-10">
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:my-10 max-w-3xl">
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-6 font-montserrat text-title">Anúncios Baseados em Interesses e sua
+                Privacidade</h1>
+        
+            <p class="mb-6">
+                Em conformidade com nossa <a href="{{ route('privacy-policy') }}"
+                    class="text-base text-blue-600 hover:underline">Política de Privacidade</a> e nossa <a
+                    href="{{ route('cookie-policy') }}" class="text-base text-blue-600 hover:underline">Política de Cookies</a>,
+                utilizamos tecnologias como cookies para personalizar os anúncios que você vê em nosso site MercadoVeículos.com.
+                Esta personalização é realizada com base nas informações que coletamos sobre suas atividades online, incluindo
+                os serviços e veículos que você pesquisa, as páginas que visita e as interações que realiza em nosso site.
+            </p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">Conformidade com a LGPD</h2>
+            <p class="mb-4">
+                Nossa abordagem para anúncios baseados em interesses está estritamente em conformidade com a Lei Geral de
+                Proteção de Dados (LGPD). Respeitamos sua privacidade e garantimos a transparência no uso de suas informações
+                pessoais. Você tem total controle sobre o uso de suas informações e pode modificar suas preferências de cookies
+                a qualquer momento para limitar o uso de cookies que personalizam publicidade conforme descrito em nossa <a
+                    href="{{ route('cookie-policy') }}" class="text-base text-blue-600 hover:underline">Política de Cookies</a>.
+            </p>
+        
+            <h2 class="text-2xl font-semibold mt-8 mb-4">Como Gerenciar Seus Dados e Preferências</h2>
+            <ol class="list-decimal pl-8 mb-4">
+                <li class="mb-2">
+                    <strong>Gerenciamento de Cookies</strong>: Visite nossa <a href="{{ route('cookie-policy') }}"
+                        class="text-base text-blue-600 hover:underline">Política de Cookies</a> para entender como gerenciar
+                    suas configurações de cookies e quais cookies são utilizados em nosso site.
+                </li>
+                <li class="mb-2">
+                    <strong>Direitos de Privacidade</strong>: Conforme nossa <a href="{{ route('privacy-policy') }}"
+                        class="text-base text-blue-600 hover:underline">Política de Privacidade</a>, você possui direitos
+                    extensivos sobre suas informações pessoais, incluindo o acesso, a correção e a exclusão de seus dados.
+                    Encorajamos você a exercer esses direitos para garantir que suas preferências sejam respeitadas.
+                </li>
+                <li class="mb-2">
+                    <strong>Contato</strong>: Se tiver qualquer dúvida sobre como usamos suas informações para fornecer anúncios
+                    personalizados, não hesite em entrar em contato conosco através das informações fornecidas na política de
+                    privacidade.
+                </li>
+            </ol>
+        
+            <p class="mt-8 text-sm text-gray-600">
+                Ao entender e controlar suas preferências, você pode garantir que sua experiência em nosso site seja tanto
+                personalizada quanto alinhada com seus interesses de privacidade.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#030D23] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Mercado Veículos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/sobre-nos" class="hover:text-gray-300">Sobre nós</a></li>
+                        <li><a href="https://mercadoveiculos.com/fale-conosco" class="hover:text-gray-300">Fale conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Transparência</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/politica-de-privacidade" class="hover:text-gray-300">Política de Privacidade</a></li>
+                        <li><a href="https://mercadoveiculos.com/termos-de-uso" class="hover:text-gray-300">Termos de Uso</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cookies" class="hover:text-gray-300">Política de Cookies</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cancelamento-e-reembolso" class="hover:text-gray-300">Política de Cancelamento e Reembolso</a></li>
+                        <li><a href="https://mercadoveiculos.com/anuncios-baseados-em-interesses" class="hover:text-gray-300">Anúncios Baseados em Interesses</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm">
+                <p>&copy; 2025 Mercado Veículos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
