@@ -3,10 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado Veículos</title>
-    <meta http-equiv="refresh" content="0;url=https://mercadoveiculos.com/blog/">
+    <title>Em Breve - Mercado Veículos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .logo-container {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .logo-container {
+                max-width: 240px;
+            }
+        }
+    </style>
 </head>
-<body>
-    <p>Redirecionando para <a href="https://mercadoveiculos.com/blog/">Blog do Mercado Veículos</a>...</p>
+<body class="min-h-screen flex flex-col">
+    <header class="bg-[#0A2868] text-white py-4 h-[4.2rem]">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center">
+                <div class="logo-container">
+                    <img src="https://mercadoveiculos.s3.amazonaws.com/statics/logos/logo-mercadoveiculos-write.svg" alt="Mercado Veículos" class="w-full h-fit">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center">
+        <div class="container mx-auto px-4 py-16 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold mb-8 text-gray-800">Estamos em desenvolvimento</h1>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8 mb-10">
+                    <div class="flex justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-[#0A2868]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                    </div>
+                    <p class="text-xl md:text-2xl text-gray-700 mb-6">O Mercado Veículos está em fase de construção.<br>Em breve traremos uma nova experiência para você.</p>
+                    
+                    <div class="text-lg md:text-xl font-medium text-gray-800 mb-8">
+                        Não perca as novidades e atualizações! Acompanhe <a href="https://mercadoveiculos.com/blog" class="text-[#0A2868] font-bold hover:underline">mercadoveiculos.com/blog</a> para estar sempre informado e preparado para quando nossa plataforma for lançada.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Conteúdo especializado</h2>
+                    <p class="text-lg text-gray-700 mb-6">Encontre artigos sobre especificações de óleos, calibragem, pneus recomendados e muito mais em:</p>
+                    <a href="https://blog.mercadoveiculos.com" class="inline-block bg-[#0A2868] hover:bg-[#083a99] text-white font-medium py-3 px-8 rounded-full transition duration-300 text-lg">
+                        blog.mercadoveiculos.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#030D23] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Mercado Veículos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/sobre-nos" class="hover:text-gray-300">Sobre nós</a></li>
+                        <li><a href="https://mercadoveiculos.com/fale-conosco" class="hover:text-gray-300">Fale conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Transparência</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://mercadoveiculos.com/politica-de-privacidade" class="hover:text-gray-300">Política de Privacidade</a></li>
+                        <li><a href="https://mercadoveiculos.com/termos-de-uso" class="hover:text-gray-300">Termos de Uso</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cookies" class="hover:text-gray-300">Política de Cookies</a></li>
+                        <li><a href="https://mercadoveiculos.com/politica-de-cancelamento-e-reembolso" class="hover:text-gray-300">Política de Cancelamento e Reembolso</a></li>
+                        <li><a href="https://mercadoveiculos.com/anuncios-baseados-em-interesses" class="hover:text-gray-300">Anúncios Baseados em Interesses</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm">
+                <p>&copy; 2025 Mercado Veículos. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
