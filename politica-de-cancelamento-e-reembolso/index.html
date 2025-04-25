@@ -44,32 +44,17 @@
                 automotivo:</p>
                 <ul class="list-disc pl-8 mb-4">
                     <li>
-                        Plano Grátis: 
-                        @if($freePlan = $this->getFreePlanDetails())
-                            Sem custo, com recursos básicos.
-                        @endif
+                        Plano Grátis: Sem custo, com recursos básicos.
                     </li>
                     <li>
-                        Plano PRO Mensal: 
-                        @if($proMonthly = $this->getProMonthlyPlanDetails())
-                            R$ {{ number_format($proMonthly['price'], 2, ',', '.') }} por mês, 
-                            com recursos avançados e renovação automática.
-                        @endif
+                        Plano PRO Mensal: R$ 49,00 por mês, com recursos avançados e renovação automática.
                     </li>
                     <li>
-                        Plano PRO Anual: 
-                        @if($proYearly = $this->getProYearlyPlanDetails())
-                            R$ {{ number_format($proYearly['price'], 2, ',', '.') }} por ano 
-                            (economia de R$ {{ number_format(($this->getProMonthlyPlanDetails()['price'] * 12) - $proYearly['price'], 2, ',', '.') }}), 
-                            com recursos avançados e renovação automática.
-                        @endif
+                        Plano PRO Anual: R$ 412,00 por ano (economia de R$ 176,00), com recursos avançados e renovação automática.
                     </li>
                     <li>
                         Plano Vitalício: 
-                        @if($lifetimePlan = $this->getLifetimePlanDetails())
-                            Pagamento único de R$ {{ number_format($lifetimePlan['prices'][0]['price'], 2, ',', '.') }}, 
-                            com recursos premium e acesso perpétuo.
-                        @endif
+                        Plano PRO Anual: R$ 412,00 por ano (economia de R$ 176,00), com recursos avançados e renovação automática.
                     </li>
                 </ul>
             <p class="mb-4">Para detalhes específicos sobre cada plano, visite nossa <a href="#"
@@ -278,8 +263,8 @@
             </ul>
         
             <p class="mt-8 text-sm text-gray-600">Para dúvidas ou esclarecimentos sobre esta política, entre em contato com
-                nosso suporte ao cliente: <a href="mailto:suporte@mercadoveiculos.com"
-                    class="text-base text-blue-600 hover:underline">suporte@mercadoveiculos.com</a></p>
+                nosso suporte ao cliente: <a href="mailto:contato@mercadoveiculos.com" rel="nofollow"
+                    class="text-base text-blue-600 hover:underline">contato@mercadoveiculos.com</a></p>
         </div>
     </main>
 
